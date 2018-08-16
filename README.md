@@ -12,11 +12,18 @@ topLevelClass.addImportedType("lombok.Data");
         topLevelClass.addAnnotation("@ToString");
         
  可以根据需要自己进行扩展。
- generatorConfig.xml中需要添加扩展插件引用如下
+ generatorConfig.xml中需要添加扩展插件引用如下：
  <plugin type="plugins.LombokPlugin" >
-			<property name="hasLombok" value="true"/>
-		</plugin>
-		<plugin type="plugins.AnnotationPlugin">
-			<property name="annotationClass" value="org.apache.ibatis.annotations.Mapper" />
-			<property name="annotationName" value="@Mapper" />
-		</plugin>
+	<property name="hasLombok" value="true"/>
+</plugin>
+<plugin type="plugins.AnnotationPlugin">
+	<property name="annotationClass" value="org.apache.ibatis.annotations.Mapper" />
+	<property name="annotationName" value="@Mapper" />
+</plugin>
+
+本项目是maven项目，注意自己数据库的版本，mysql-connector-java的版本会有不兼容的情况，数据库版本6以上可以用6以上的版本，6以下，需要引入5点几的版本使用，否则会报错
+<dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.12</version>
+        </dependency>
