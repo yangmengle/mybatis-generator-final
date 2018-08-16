@@ -12,10 +12,10 @@ topLevelClass.addAnnotation("@Data");
         
  可以根据需要自己进行扩展。
  generatorConfig.xml中需要添加扩展插件引用如下：
- 【<plugin type="plugins.LombokPlugin" >
-	<property name="hasLombok" value="true"/>
-</plugin>
-<plugin type="plugins.AnnotationPlugin">
+ \<plugin type="plugins.LombokPlugin" \>
+	\<property name="hasLombok" value="true"\/\>
+\<\/plugin\>
+\<plugin type="plugins.AnnotationPlugin"\>
 	<property name="annotationClass" value="org.apache.ibatis.annotations.Mapper" />
 	<property name="annotationName" value="@Mapper" />
 </plugin>】
